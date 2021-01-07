@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<entity-mappings
+  xmlns="http://java.sun.com/xml/ns/persistence/orm"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm orm_2_0.xsd"
+  version="2.0">
+  
+  	 	<entity  class="com.ourcompany.tradestore.entity.TradeTransactionEntity" >
+		<table name="trade_transaction" />
+		<attributes>
+		
+		<embedded-id name="key"
+		 />
+		   
+		    			
+			<basic name="counterPartyId"  >
+				<column name="counter_party_id" />
+			</basic>
+	
+			
+			<basic name="bookingId"  >
+				<column name="booking_id" />
+			</basic>
+	
+	
+	
+			<basic name="maturityDate"  >
+				<column name="maturity_date" />
+				
+			</basic>
+	
+			<basic name="creationDate"  >
+				<column name="creation_date" />
+			</basic>
+
+			<basic name="expiryStatus" >
+				<column name="expiry_status" />
+			</basic>
+			
+			
+
+		</attributes>
+			
+ 	</entity>
+
+	
+	<embeddable
+		class="com.ourcompany.tradestore.entity.TradeTransactionEntityKey">
+		<attributes>
+			<basic name="tradeId" >
+				<column name="trade_id" />
+			</basic>
+			
+			<basic name="tradeVersion" >
+				<column name="trade_version" />
+			</basic>
+					</attributes>
+	</embeddable>
+
+
+
+				
+		
+ </entity-mappings>

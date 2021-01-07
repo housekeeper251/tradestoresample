@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
+             version="2.0">
+    <persistence-unit name="TradeStore" transaction-type="RESOURCE_LOCAL">
+<!--         <provider>org.hibernate.ejb.HibernatePersistence</provider>
+ -->		 
+	
+	<!-- comment this for junit 	
+	<non-jta-data-source>java:/comp/env/jdbc/MyLocalDB</non-jta-data-source>	
+	-->
+		
+		<mapping-file>META-INF/mapping/TradeMaster.xml</mapping-file>
+    	<mapping-file>META-INF/mapping/TradeTransaction.xml</mapping-file>
+		 
+		                                      		
+ 		<properties>
+       		 <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect"/>
+             <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+             <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/newDB?serverTimezone=Asia/Calcutta"/>
+ 			 <property name="hibernate.connection.password" value="welcome1"/>
+ 			 <property name="hibernate.show_sql" value="true"/>
+			 <property name="hibernate.connection.username" value="testuser1"/> 
+             <property name="javax.persistence.jdbc.user" value="testuser1"/>
+             <property name="javax.persistence.jdbc.password" value="welcome1"/>
+   		  </properties>
+
+        </persistence-unit>
+</persistence>
